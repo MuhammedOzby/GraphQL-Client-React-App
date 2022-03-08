@@ -48,3 +48,30 @@ Bir önceki ödevde listelemeyi statik olarak yapmıştınız. Yani, herhangi et
 - Sayaç yönetimi state yapısının içerisinde yapıldı.
 - Query dosyası ayrıldı ve **Fragment** yöntemi kullanıldı.
 - Environments genişletildi.
+
+---
+
+## Ödev 6
+
+Bu ödevde yeni etklik ekleme formunu hazırlamanız gerekiyor.
+
+### Gereksinimler (Ödev 6)
+
+- Etkinlik başlığı, açıklaması, konumu, tarih ve saati ve user inputları oluşturulmalıdır.
+- Etkinlik eklendikten sonra anasayfada gerçek zamanlı olarak listeleme işleminin gerçekleştiğinden emin olunuz.
+- Form gönderildikten, cevap gelene kadar geçen sürede inputları disable edin ve buton üzerinde bir loading indicator gösteriniz.
+
+Kolaylıklar :)
+
+---
+
+### İşlemler (Ödev 6)
+
+- New Event sayfası oluşturuldu.
+- Yeni bir form tasarılandır. Bu formun özellikleri:
+  - Güncel kullanıcı verilerini talep etmesi.
+  - Güncel lokasyon verilerini talep etmesi.
+  - Seçim listelerinde arama yapabilme.
+  - Tarih bilgisinde saat bilgisine de yer verildi.
+- Anasayfa test edildi.
+- Loading indicator yerine ant design içindeki Skeleton kullanıldı.

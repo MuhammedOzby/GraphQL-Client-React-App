@@ -8,8 +8,11 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import { Tabs } from "antd";
-const { TabPane } = Tabs;
+import { Layout, Menu } from "antd";
+import NewPost from "./pages/NewEvent";
+import { HomeOutlined, UsergroupAddOutlined } from "@ant-design/icons";
+
+const { Header, Content } = Layout;
 
 function App() {
   let resolved = useResolvedPath("/");
@@ -17,24 +20,31 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <div className="container">
-      <Tabs
-        activeKey={match?.pathname ? match.pathname : ""}
-        onChange={(key) => {
-          navigate(`${key}`);
-        }}
-        centered
-      >
-        <TabPane tab="Home" key="/"></TabPane>
-        <TabPane tab="Tab 2" key="/about"></TabPane>
-        <TabPane tab="Tab 3" key="/test"></TabPane>
-      </Tabs>
-      <div className="content">
+    <>
+      <Header>
+        <Menu
+          theme="dark"
+          onClick={(menu) => {
+            navigate(`${menu.key}`);
+          }}
+          selectedKeys={[match?.pathname ? match.pathname : ""]}
+          mode="horizontal"
+        >
+          <Menu.Item key="/" icon={<HomeOutlined />}>
+            Home Page
+          </Menu.Item>
+          <Menu.Item key="/new-event" icon={<UsergroupAddOutlined />}>
+            New Event
+          </Menu.Item>
+        </Menu>
+      </Header>
+      <Content>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/new-event" element={<NewPost />} />
         </Routes>
-      </div>
-    </div>
+      </Content>
+    </>
   );
 }
 
